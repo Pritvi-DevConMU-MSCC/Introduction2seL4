@@ -1,0 +1,2 @@
+# Introduction2seL4
+ An introduction to The seL4 Microkernel  A Microkernel would be nice when developing embedded Operating Systems especially when resources are scarce, limited and high resilience is needed considering many IoT out there are microcontrollers or you want to build an autonomous vehicle, aircraft, zeppelin or maybe a drone(UAV).  seL4 is the world's first operating-system kernel with an end-to-end proof of implementation correctness and security enforcement is available as open source. More information found here http://sel4.systems/
