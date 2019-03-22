@@ -1,0 +1,312 @@
+\documentclass[a4paper,12pt,draft,titlepage,openbib]{beamer}
+
+\author{Pritvi Jheengut @zcoldplayer}
+\title{An introduction to The seL4 Microkernel}
+\subtitle{A secure and performant Microkernel}
+
+\usepackage[size=a4, orientation=landscape, scale=3.5]{beamerposter}
+
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% Eliminate errors such as
+% LaTeX Font Warning: Font shape `T1/cmss/m/n' in size <4> not available
+% LaTeX Font Warning: Size substitutions with differences up to 1.0pt
+
+\usepackage{hyperref}
+\hypersetup{
+  pdfcreator=pdflatex,
+  pdffitwindow=true
+}
+
+\usepackage{verbatim}
+
+\usepackage[french,UKenglish]{babel}
+\usepackage{listings}
+
+% \usepackage{pgf}
+% \usepackage{xy}[all]
+% \usepackage{graphicx}
+
+% \usepackage{booktabs}
+
+\mode<presentation>{
+
+  \useoutertheme{infolines}
+  \usecolortheme{whale}
+
+  \definecolor{light}{HTML}{0088FF}
+  \definecolor{confblue}{HTML}{111144}
+  \definecolor{confred}{HTML}{771111}
+  \definecolor{confyellow}{HTML}{FF5533}
+
+  \setbeamercolor{alerted text}{bg=confblue!75,fg=confyellow!50}
+  \setbeamercolor{block title}{bg=confblue!80,fg=white}
+  \setbeamercolor{block body}{bg=confblue,fg=confyellow}
+  \setbeamercolor{frametitle}{parent=confyellow,bg=confblue!90,fg=confred!70}
+  \setbeamercolor{normal text}{fg=confyellow}
+  \setbeamercolor{structure}{bg=confblue,fg=light!75}
+  \setbeamercolor{Title bar}{fg=confred!90}
+  \setbeamercolor{titlelike}{parent=confyellow,bg=confblue!90,fg=white!85}
+
+  \setbeamercovered{transparent,dynamic}
+
+  \setbeamertemplate{blocks}[rounded][shadow=true]
+  \setbeamertemplate{background canvas}[vertical shading]
+                    [top=confred,middle=confblue!95,bottom=light]
+
+% \mode<handout>{\beamertemplatesolidbackgroundcolor{black!50}}
+
+}
+
+\subtitle{
+}
+
+% \date{ }
+
+\begin{document}
+
+\date[]{}
+
+\maketitle
+
+\section{CopyLeft License}
+
+\frame{
+  \frametitle{Copyleft License Attribution}
+
+  Made with love using beamer, LaTeX and git.\\
+  You can view at \href{https://github.com/Pritvi-DevConMU-MSCC/Introduction2seL4}
+  {Introduction to seL4}
+
+  \begin{alertblock}{This work is licensed under the LaTeX Project
+      Public License.}
+    To view a copy of this license, visit \\
+    \url{https://www.latex-project.org/lppl.txt}
+  \end{alertblock}
+
+  \begin{alertblock}{This work is licensed under the Creative
+      Commons Attribution 4.0 International License.}
+    To view a copy of this license, visit \\
+    \url{http://creativecommons.org/licenses/by/4.0/} or \\
+
+    send a letter to \\
+    Creative Commons, \\
+    PO Box 1866, \\
+    Mountain View, \\
+    CA 94042, \\
+    USA. \\
+  \end{alertblock}
+}
+
+\section{Greetings}
+
+\frame{
+  \frametitle{Who Am I}
+
+  \large
+
+  \href{http://slackware.com/}{Geek@Slackware}
+
+  \href{https://twitter.com/zcoldplayer}{twitter @zcoldplayer}
+
+  \href{https://xmail.net/z.coldplayer}{zcoldplayer xmail Website}
+
+  \href{http://metservice.intnet.mu/}{Work
+    : SMTT@Meteorological.Services.mu}
+
+  Active in many User group LUGM, MMC, MSCC, FECM, GDG\_MU \\
+  and several other hackathons
+
+  Passionate about how and why things work.
+
+  Fervour Advocate of Free Libre and Open Source Software.
+
+  \href{}{}
+
+}
+
+\frame{
+  \frametitle{Who are you}
+
+  \large
+
+  \begin{block}{Would you mind tell me who you are?}
+    \begin{enumerate}
+    \item @twitter\_handle
+    \item where you work
+    \item email you want to share
+    \item Hobbies
+    \item purpose and expectations of this session
+    \end{enumerate}
+  \end{block}
+
+}
+
+\section{Community Groups in Mauritius}
+
+\frame{
+  \frametitle{Community Groups in Mauritius}
+
+  \begin{block}{Healthy growth of Community Groups in Mauritius}
+    This turn of the century has seen an uprising of Community groups in
+    Mauritius in the field of the Digital World. The diversity has
+    helped the exchange and sharing of innovative ideas, experience,
+    bleeding edge technology, upcoming events, conferences in the
+    Digital Island of the Republic of Mauritius.
+  \end{block}
+
+  \large
+
+  This is a list of some of the active communities in Digital Mauritius.
+  \begin{itemize}
+  \item Linux User Group Meta, LUGM
+  \item Mauritius Software Craftmanship Community, MSCC
+  \item Mauritius Makers Community, MMC
+  \item Front-End Coders Mauritius, FECM
+  \item PHP User Group of Mauritius, phpMauritiusUG
+  \item Symfonymu
+  \item Google Developers Group Mauritius, GDG\_M
+  \item Digital Marketing Mauritius
+  \end{itemize}
+
+}
+
+\section{ }
+
+\frame{
+  \frametitle{ }
+
+  \large
+
+}
+\section{ }
+
+\frame{
+  \frametitle{ }
+
+  \large
+
+}
+
+
+\section{ }
+
+\frame{
+  \frametitle{ }
+
+  \large
+
+}
+\section{ }
+
+\frame{
+  \frametitle{ }
+
+  \large
+
+}
+\section{ }
+
+\frame{
+  \frametitle{ }
+
+  \large
+
+}
+\section{ }
+
+\frame{
+  \frametitle{ }
+
+  \large
+
+}
+\section{ }
+
+\frame{
+  \frametitle{ }
+
+  \large
+
+}
+\section{ }
+
+\frame{
+  \frametitle{ }
+
+  \large
+
+}
+
+
+\section{ }
+
+\frame{
+  \frametitle{ }
+
+  \large
+
+}
+\section{ }
+
+\frame{
+  \frametitle{ }
+
+  \large
+
+}
+\section{ }
+
+\frame{
+  \frametitle{ }
+
+  \large
+
+}
+\section{ }
+
+\frame{
+  \frametitle{ }
+
+  \large
+
+}
+\section{ }
+
+\frame{
+  \frametitle{ }
+
+  \large
+
+}
+
+\section{ }
+
+\frame{
+  \frametitle{ }
+
+  \large
+
+}
+
+\section{end}
+
+\frame{
+  \frametitle{Questions}
+
+  \huge
+
+  \begin{block}
+
+    QUESTIONS!
+
+  \end{block}
+
+}
+
+\end{document}
+
+
+
