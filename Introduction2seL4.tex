@@ -218,6 +218,126 @@
 
 }
 
+\section{The Kernel}
+\subsection{A bridge}
+
+\frame{
+  \frametitle{The importance of the Kernel}
+
+  \begin{block}{In Computer science terminology,}
+
+    \begin{center}
+      the Kernel is the bridge between \\
+      the hardware and user space Software.
+
+    \end{center}
+
+  \end{block}
+
+  \begin{center}
+    \begin{tikzpicture}
+
+      \tikzstyle{startstop}=[rectangle,rounded corners,
+        minimum width=20cm,minimum height=2cm,
+        text centered,fill=darkgray!90]
+
+      \node(HARDWARE1)[startstop]{HARDWARE};
+      \node(KERNEL1)[startstop,below =of HARDWARE1,
+      yshift=-3cm]{KERNEL};
+      \node(SOFTWARE1)[startstop,below =of KERNEL1,
+      yshift=-3cm]{USER END SOFTWARE};
+
+      \draw [line width=0.25cm,<->,lime]
+      (HARDWARE1)--(KERNEL1);
+      \draw [line width=0.25cm,<->,lime]
+      (KERNEL1)--(SOFTWARE1);
+
+      \node(HARDWARE2)[startstop,below right=of HARDWARE1,
+      yshift=3cm]{HARDWARE SPACE};
+      \node(KERNEL2)[startstop,below right=of KERNEL1,
+      yshift=3cm]{KERNEL SPACE};
+      \node(SOFTWARE2)[startstop,below right=of SOFTWARE1,
+      yshift=3cm]{USER SPACE};
+
+      \draw [line width=0.25cm,<->,lime]
+      (HARDWARE2)--(KERNEL2);
+      \draw [line width=0.25cm,<->,lime]
+      (KERNEL2)--(SOFTWARE2);
+
+    \end{tikzpicture}
+
+  \end{center}
+
+}
+
+\subsection{Different Role undertaken}
+
+\frame{
+  \frametitle{Multi-functionality of the Kernel}
+
+  \begin{block}{The Kernel also manages many resources such as :}
+
+    \begin{itemize}
+    \item Processing units and Process Capabilities
+    \item Memory units and sometimes Virtual addressing
+    \item Input as well as Output Devices
+    \item Virtualisation and Containers
+    \item System Calls and permissions
+    \item Security Mechanisms
+    \end{itemize}
+
+  \end{block}
+
+}
+
+\subsection{Hardware abstraction}
+
+\frame{
+  \frametitle{Hardware abstraction layers of the Kernel}
+
+  \begin{block}{The Kernel provides hardware abstraction}
+
+    \begin{center}
+
+      for the underlying user space software.
+
+    \end{center}
+
+    Hardware abstraction is crucial in cases such as
+
+    \begin{itemize}
+     \item portability
+     \item security frameworks
+     \item code reuse
+     \item forward and backward version compatibility
+    \end{itemize}
+
+    A kernel once built, can be run on several different types of
+    platform but of similar architectures.
+
+  \end{block}
+
+}
+
+\subsection{Major Kernel Design}
+
+\frame{
+  \frametitle{The major Kernel Design aspects}
+
+  \begin{center}
+
+%     \smartdiagramset{text color = white}
+
+    \smartdiagram[bubble diagram]{
+      \textbf{Implementations} \\ \textbf{and Design} \\
+      \textbf{Approach},
+      \textbf{Monolithic} \\ \textbf{kernel},
+      \textbf{Hybrid} \\ \textbf{kernel},
+      \textbf{$\mu$K} \\ \textbf{ Microkernel} }
+
+  \end{center}
+}
+
 \section{ }
 
 \frame{
